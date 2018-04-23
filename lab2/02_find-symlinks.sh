@@ -1,5 +1,12 @@
 #!/bin/sh
 
+if [ ! -x 01_create-symlinks.sh ]
+then
+	echo "Required dependency not found: 01_create-symlinks.sh"
+	echo "Make sure 01_create-symlinks.sh exists and is executable"
+    exit 1
+fi
+
 echo 'Running task1 file:'
 
 ./01_create-symlinks.sh
