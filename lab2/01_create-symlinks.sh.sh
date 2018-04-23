@@ -2,32 +2,32 @@
 
 echo 'Removing old dir'
 
-rm -rf dir
+rm -rf task1example
 
 echo 'Creating dir structure'
 
-mkdir -p dir/a/b/c
+mkdir -p task1example/a/b/c
 
-mkdir -p dir/d
+mkdir -p task1example/d
 
-mkdir -p dir/e
+mkdir -p task1example/e
 
 echo 'Creating files'
 
-echo 'test1' > dir/a/b/c/plik1
-echo 'test2' > dir/a/b/c/plik2
+echo 'test1' > task1example/a/b/c/plik1
+echo 'test2' > task1example/a/b/c/plik2
 
-echo 'testA' > dir/d/plikA
-echo 'testB' > dir/d/plikB
+echo 'testA' > task1example/d/plikA
+echo 'testB' > task1example/d/plikB
 
 echo 'Creating symbolic links'
 
 #sciezki wzgledne
-ln -s ../a/b/c/plik1 dir/e/link_plik1
-ln -s ../d/plikA dir/e/link_plikA
-ln -s ../a dir/e/link_do_a
+ln -s ../a/b/c/plik1 task1example/e/link_plik1
+ln -s ../d/plikA task1example/e/link_plikA
+ln -s ../a task1example/e/link_do_a
 
 #sciezki bezwzgledne
-ln -s $(pwd)/dir/a/b/c/plik1 dir/e/link_plik1_bez
-ln -s $(pwd)/dir/a/b/c/plik2 dir/e/link_plik2_bez
-ln -s $(pwd)/dir/d/plikB dir/e/link_plikB_bez
+ln -s $(pwd)/task1example/a/b/c/plik1 task1example/e/link_plik1_bez
+ln -s $(pwd)/task1example/a/b/c/plik2 task1example/e/link_plik2_bez
+ln -s $(pwd)/task1example/d/plikB task1example/e/link_plikB_bez
