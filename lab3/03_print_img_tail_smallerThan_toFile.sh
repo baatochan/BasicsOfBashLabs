@@ -25,9 +25,9 @@ touch t2/e/f/iii
 touch t2/e/f/g/6.gif
 touch t2/e/f/g/h/7.jpg
 
-find `pwd`/t2/ -maxdepth 3 -size -64c \( -iname "*.jpg" -print -o -iname "*.gif" -print \) | tr '/' '\\' | tail -n 5 | \
+find `pwd`/t2/ -maxdepth 3 -size -64c \( -iname "*.jpg" -print -o -iname "*.gif" -print \) | tr '/' '\\' | \
 		while read filename
 		do
-			echo $filename `date`
+			echo $filename \| `date +%Y-%m-%d` \| `date +%H:%M:%S`
 		done | \
-	> output.txt
+	tail -n 5 | tee output.txt
